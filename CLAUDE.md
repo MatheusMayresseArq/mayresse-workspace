@@ -1,14 +1,50 @@
-# Claude Code OS — Kit Ratos de IA
+# CLAUDE.md
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
-
-Se você acabou de clonar esse repositório:
-1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
-2. Depois rode `/mapear` pra criar skills personalizadas pro que você faz no dia a dia
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ---
 
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
+# Mayresse Arquitetura — Claude Code OS
+
+## O que é esse workspace
+Workspace de automação de marketing da Mayresse Arquitetura. Usado para criar e escalar conteúdo para as 3 marcas do grupo: carrosséis, sites, apresentações, vídeos curtos e propostas comerciais.
+
+**Estrutura de pastas:**
+- `conteudo/` — produção de conteúdo organizada por marca
+  - `mayresse-arquitetura/` — carrosséis, reels, youtube
+  - `mayresse-lima/` — carrosséis, reels
+  - `inside-mayresse/` — conteúdo da imersão
+- `sites/` — landing pages e sites gerados
+- `propostas/` — propostas comerciais
+- `dados/` — drop zone para arquivos de análise (CSV, PDF, XLSX, TXT)
+- `marca/mayresse-arquitetura/` — logos e assets da marca principal
+- `marca/mayresse-lima/` — logos, backgrounds e assets da Mayresse Lima
+- `marca/inside-mayresse/` — logos, backgrounds, ícones da Inside Mayresse
+- `templates/skills/` — templates de skills prontos para personalizar com /mapear
+- `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis para usar em skills
+
+## Sobre o negócio
+Escritório de arquitetura autoral contemporânea de alto padrão, com sede em Xangrilá/RS e São Paulo/SP. Trata arquitetura como experiência e estilo de vida. Atende clientes externos com equipe multidisciplinar (arquitetura, design, comunicação).
+
+**Submarcas:**
+- **Mayresse Lima** (@mayresse.lima) — casas autorais prontas para morar, comunicação emocional
+- **Inside Mayresse** (@insidemayresse) — imersão sobre a marca Mayresse Arquitetura, voltada a profissionais
+
+## O que mais fazemos aqui
+- Carrosséis para Instagram (3 marcas)
+- Vídeos curtos para Shorts, Reels e TikTok
+- Vídeos para YouTube
+- Sites e landing pages
+- Apresentações e slides
+- Propostas comerciais
+
+## Tom de voz
+Elegante, estratégico, contemporâneo e humano. Autoridade sem frieza. Sem linguagem corporativa engessada, sem clichês, sem "cara de IA". Ver `_contexto/preferencias.md` para detalhes por marca.
+
+## Ferramentas conectadas
+Adobe Creative Suite, Kling, Gamma, Claude, ChatGPT, Gemini — ver `templates/ferramentas/catalogo.md` para MCPs instaláveis.
+
+---
 
 ## Contexto do negócio
 
@@ -20,7 +56,7 @@ No início de toda conversa, ler os seguintes arquivos (se existirem e estiverem
 
 Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir prioridades, formatos ou abordagens, considerar o foco atual descrito em `estrategia.md`.
 
-Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo.
+Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo. Identificar sempre qual das 3 marcas está sendo atendida antes de criar qualquer peça visual.
 
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
 
