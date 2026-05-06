@@ -20,6 +20,7 @@ Workspace de automação de marketing da Mayresse Arquitetura. Usado para criar 
 - `marca/mayresse-arquitetura/` — logos e assets da marca principal
 - `marca/mayresse-lima/` — logos, backgrounds e assets da Mayresse Lima
 - `marca/inside-mayresse/` — logos, backgrounds, ícones da Inside Mayresse
+- `tarefas.md` — lista de tarefas e pendências do workspace
 - `templates/skills/` — templates de skills prontos para personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis para usar em skills
 
@@ -40,6 +41,10 @@ Escritório de arquitetura autoral contemporânea de alto padrão, com sede em X
 
 ## Tom de voz
 Elegante, estratégico, contemporâneo e humano. Autoridade sem frieza. Sem linguagem corporativa engessada, sem clichês, sem "cara de IA". Ver `_contexto/preferencias.md` para detalhes por marca.
+
+## Regras de organização
+
+Sempre que criar uma pasta nova nesse workspace, gerar um `CLAUDE.md` dentro dela explicando o propósito da pasta, o que vai nela e como está organizada.
 
 ## Ferramentas conectadas
 Adobe Creative Suite, Kling, Gamma, Claude, ChatGPT, Gemini — ver `templates/ferramentas/catalogo.md` para MCPs instaláveis.

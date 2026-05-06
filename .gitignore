@@ -31,6 +31,12 @@ anotacoes/
 curriculo/
 tarefas.md
 
+# Exceções — CLAUDE.md de contexto sempre commitado
+!conteudo/**/CLAUDE.md
+!propostas/CLAUDE.md
+!sites/CLAUDE.md
+!clientes/**/CLAUDE.md
+
 # Sistema
 .DS_Store
 node_modules/
