@@ -46,6 +46,10 @@ Elegante, estratégico, contemporâneo e humano. Autoridade sem frieza. Sem ling
 
 Sempre que criar uma pasta nova nesse workspace, gerar um `CLAUDE.md` dentro dela explicando o propósito da pasta, o que vai nela e como está organizada.
 
+## Skills instaladas
+
+- `/carrossel` — cria carrosséis para Instagram com identidade visual das 3 marcas. Salva em `conteudo/[marca]/carrosseis/[tema]/`
+
 ## Ferramentas conectadas
 Adobe Creative Suite, Kling, Gamma, Claude, ChatGPT, Gemini — ver `templates/ferramentas/catalogo.md` para MCPs instaláveis.
 
