@@ -49,6 +49,7 @@ Sempre que criar uma pasta nova nesse workspace, gerar um `CLAUDE.md` dentro del
 ## Skills instaladas
 
 - `/carrossel` — cria carrosséis para Instagram com identidade visual das 3 marcas. Salva em `conteudo/[marca]/carrosseis/[tema]/`
+- `/conteudo-semanal` — planeja e produz os 5 conteúdos semanais da Mayresse Arquitetura (2 carrosséis, 1 reel, 2 posts de feed)
 
 ## Ferramentas conectadas
 Adobe Creative Suite, Kling, Gamma, Claude, ChatGPT, Gemini — ver `templates/ferramentas/catalogo.md` para MCPs instaláveis.

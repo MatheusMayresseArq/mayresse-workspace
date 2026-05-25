@@ -12,9 +12,20 @@
 
 ## Tipografia
 
-- **Títulos e destaques:** Bebas Neue Book
-- **Corpo, subtítulos e botões:** Gotham
+- **Títulos e destaques:** Bebas Neue (weight 400 — único disponível no Google Fonts)
+- **Corpo, subtítulos e botões:** Montserrat (300/400/500/600)
 - **Tom:** mais emocional e próximo que a Mayresse Arquitetura
+
+## Carrosseis Instagram — Estilo visual
+
+- **Estrutura:** slides alternando escuro/claro. Escuros: foto full-bleed + gradiente bottom-to-top (opacidade máx ~0.76). Claros: foto cortada no topo (~295px) + texto em fundo `#fafaf7` embaixo
+- **Gradiente dark (padrão):** `linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.60) 66%, rgba(0,0,0,0.74) 100%)` — não exagerar na opacidade, a foto tem que respirar
+- **Marca d'água:** `@mayresse.lima` no canto superior direito em todos os slides (branco nos escuros, cinza nos claros)
+- **Barra de progresso:** branca nos slides escuros, `#cbed00` nos claros
+- **Título (Bebas Neue):** ~34–38px. Nunca exagerar no tamanho — preferir elegância a impacto bruto
+- **Palavras viúvas:** proibido. Usar `&nbsp;` entre as duas últimas palavras de cada parágrafo
+- **Último slide:** "NOME DO PROJETO" em Bebas Neue + `#cbed00`, localização/metragem em Bebas Neue regular menor (18px) + branco 70%
+- **Referência aprovada:** `conteudo/mayresse-lima/carrosseis/casa-seasons/instagram/`
 
 ## Estilo geral
 Mais próximo, emocional e experiencial. Foca no sentimento de estar em casa. Menos institucional, mais vivencial. O verde lima é usado como acento — não precisa aparecer em tudo.
