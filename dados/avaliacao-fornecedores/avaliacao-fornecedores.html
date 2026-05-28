@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação de Fornecedores — Mayresse Arquitetura</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #f5f4f0;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 48px auto;
+      background: #fff;
+      padding: 56px 64px;
+      border-radius: 4px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+
+    header {
+      border-bottom: 2px solid #b09a78;
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+
+    header .marca {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #b09a78;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 300;
+      color: #1a1a1a;
+      letter-spacing: 0.3px;
+    }
+
+    header .meta {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Seções */
+    .secao {
+      margin-bottom: 44px;
+    }
+
+    .secao-titulo {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #b09a78;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e3dc;
+      margin-bottom: 24px;
+    }
+
+    /* Cards de fornecedor */
+    .fornecedor {
+      margin-bottom: 28px;
+      padding: 20px 24px;
+      border-left: 3px solid #e8e3dc;
+      background: #fdfcfa;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .fornecedor:last-child { margin-bottom: 0; }
+
+    .fornecedor h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fornecedor h3 .local {
+      font-size: 11px;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.5px;
+    }
+
+    .listas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .listas.uma-coluna {
+      grid-template-columns: 1fr;
+    }
+
+    .lista-bloco h4 {
+      font-size: 10.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .lista-bloco.positivo h4 { color: #4a7c59; }
+    .lista-bloco.negativo h4 { color: #a03535; }
+    .lista-bloco.atencao h4 { color: #b07530; }
+    .lista-bloco.bonus h4 { color: #3a6aab; }
+    .lista-bloco.neutro h4 { color: #555; }
+
+    .lista-bloco ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .lista-bloco ul li {
+      font-size: 12.5px;
+      line-height: 1.6;
+      padding: 2px 0 2px 14px;
+      position: relative;
+      color: #333;
+    }
+
+    .lista-bloco ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+    }
+
+    .lista-bloco.positivo ul li::before { color: #4a7c59; }
+    .lista-bloco.negativo ul li::before { color: #a03535; }
+    .lista-bloco.atencao ul li::before { color: #b07530; }
+    .lista-bloco.bonus ul li::before { color: #3a6aab; }
+
+    /* Clientes (BERTOL) */
+    .clientes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .clientes-bloco h4 {
+      font-size: 10.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .clientes-bloco.fechados h4 { color: #4a7c59; }
+    .clientes-bloco.orcamento h4 { color: #b07530; }
+
+    .cliente-item {
+      font-size: 12.5px;
+      padding: 4px 0 4px 14px;
+      position: relative;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .cliente-item::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+    }
+
+    .clientes-bloco.fechados .cliente-item::before { color: #4a7c59; }
+    .clientes-bloco.orcamento .cliente-item::before { color: #b07530; }
+
+    .cliente-item .prazo {
+      font-size: 11px;
+      color: #888;
+      display: block;
+    }
+
+    /* Benefícios / Resultado (BERTOL) */
+    .bertol-resumo {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .resumo-bloco {
+      padding: 14px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .resumo-bloco h5 {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .resumo-bloco.beneficios { background: #f0f6f2; }
+    .resumo-bloco.beneficios h5 { color: #4a7c59; }
+
+    .resumo-bloco.preocupacao { background: #fdf4f0; }
+    .resumo-bloco.preocupacao h5 { color: #a03535; }
+
+    .resumo-bloco.resultado { background: #f0f4fb; }
+    .resumo-bloco.resultado h5 { color: #3a6aab; }
+
+    footer {
+      margin-top: 52px;
+      padding-top: 20px;
+      border-top: 1px solid #e8e3dc;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; padding: 40px 48px; max-width: 100%; }
+      .fornecedor { break-inside: avoid; }
+      .secao { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="marca">Mayresse Arquitetura</div>
+    <h1>Avaliação de Fornecedores e Parceiros</h1>
+    <div class="meta">Uso interno — equipe de projetos</div>
+  </header>
+
+  <!-- BERTOL MÓVEIS -->
+  <div class="secao">
+    <div class="secao-titulo">Bertol Móveis</div>
+
+    <div class="fornecedor">
+      <h3>Clientes em andamento</h3>
+
+      <div class="clientes-grid">
+        <div class="clientes-bloco fechados">
+          <h4>Fechados</h4>
+
+          <div class="cliente-item">
+            Catiucia e Felipe
+            <span class="prazo">Prazo de medição: junho/julho 2026</span>
+          </div>
+          <div class="cliente-item">
+            Gianpe
+            <span class="prazo">Medido em abril/2026 — entrega estimada julho/agosto 2026 (90 dias)</span>
+          </div>
+          <div class="cliente-item">
+            Alexandre e Rosangela — Apto DOM
+            <span class="prazo">Conferência em 2 etapas: quartos/banhos/circulação em mar/2026; cozinha/sala/gourmet/lavanderia em 16/05/2026 — prazo 60 dias para execução e montagens</span>
+          </div>
+        </div>
+
+        <div class="clientes-bloco orcamento">
+          <h4>Em Orçamento</h4>
+
+          <div class="cliente-item">
+            Cacá e Fernando
+            <span class="prazo">Entrega prevista 2027</span>
+          </div>
+          <div class="cliente-item">
+            Karina Porto Fino Canoas
+            <span class="prazo">Próximo</span>
+          </div>
+          <div class="cliente-item">
+            Angelita
+            <span class="prazo">Próximo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bertol-resumo">
+        <div class="resumo-bloco beneficios">
+          <h5>Benefícios</h5>
+          Ajuste de valores de reserva. Facilidade na comunicação e linguagem de projetos. Compreende 100% o método de trabalho do escritório. Pagamento à vista das reservas.
+        </div>
+        <div class="resumo-bloco preocupacao">
+          <h5>Preocupação Principal</h5>
+          Prazos de entrega, atrasos e retorno moroso de orçamentos.
+        </div>
+        <div class="resumo-bloco resultado">
+          <h5>Resultado</h5>
+          Impecável em projeto e acabamento final.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSTRUTORAS -->
+  <div class="secao">
+    <div class="secao-titulo">Construtoras com Acabamentos de Interiores Orçados</div>
+
+    <div class="fornecedor">
+      <h3>Mesturini</h3>
+      <div class="listas">
+        <div class="lista-bloco negativo">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Demora para orçar especificações enviadas — cliente e arquiteto precisam cobrar</li>
+            <li>Não consegue amostra física de nenhum material, exceto Cittá e York da Portinari</li>
+            <li>Só especifica Portinari e Deca</li>
+            <li>Atrasa o próprio cronograma por demora no envio de informações e orçamentos</li>
+          </ul>
+        </div>
+        <div class="lista-bloco bonus">
+          <h4>Bônus / Parceria</h4>
+          <ul>
+            <li>Resolvem internamente quando falta pedra ou porcelanato</li>
+            <li>Parceria estabelecida com o escritório</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Domix</h3>
+      <div class="listas">
+        <div class="lista-bloco negativo">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Coloca em contrato a linha mais simples de metais Deca e louças, inclusive cromado</li>
+            <li>Não retorna sobre créditos e especificações de interiores</li>
+            <li>Mesmo fornecendo lista completa, não faz sugestões</li>
+            <li>Não possuem amostras de peças ou produtos</li>
+            <li>Não indicam compras de revestimentos e metais — não resolvem nem ofertando crédito ao cliente</li>
+          </ul>
+        </div>
+        <div class="lista-bloco bonus">
+          <h4>Bônus / Parceria</h4>
+          <ul>
+            <li>Parceria com o escritório</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Raupp</h3>
+      <div class="listas uma-coluna">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Case de organização na compra de porcelanatos e metais</li>
+            <li>Trabalha com especificações fornecidas pelo escritório</li>
+            <li>Comunicação adequada com cliente e arquiteto</li>
+            <li>Confere paginações e quebras para evitar falta de produtos</li>
+            <li>Resolve internamente as pendências</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOJAS DE METAIS -->
+  <div class="secao">
+    <div class="secao-titulo">Lojas de Metais e Revestimentos</div>
+
+    <div class="fornecedor">
+      <h3>Elevato <span class="local">Porto Alegre</span></h3>
+      <div class="listas uma-coluna">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Tem mostruário, estoque e boas negociações</li>
+            <li>Respeita quando o cliente compra direto — não prejudica o atendimento</li>
+            <li>Resolve pendências em obra e troca produtos</li>
+            <li>Paga reservas ao escritório em dia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Toque e Retoque <span class="local">Gramado</span></h3>
+      <div class="listas">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Atende bem o cliente</li>
+            <li>Resolve pendências em obra</li>
+            <li>Negocia bem com cliente</li>
+            <li>Faz paginações se necessário</li>
+            <li>Realiza pagamento de reservas</li>
+          </ul>
+        </div>
+        <div class="lista-bloco atencao">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Retorno de orçamentos mais moroso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Ladrilhart</h3>
+      <div class="listas">
+        <div class="lista-bloco negativo">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Valores sempre bem acima dos demais</li>
+            <li>Clientes sentem dificuldade de negociar</li>
+            <li>Bloqueia compra se descobre que o cliente adquiriu em outra loja</li>
+            <li>Morosidade para resolver problemas técnicos</li>
+            <li>Vendedor desorientado para atender</li>
+            <li>Troca contínua de gerentes de loja</li>
+            <li>Estoque menor — quase sempre necessário encomendar</li>
+          </ul>
+        </div>
+        <div class="lista-bloco neutro">
+          <h4>Neutro</h4>
+          <ul>
+            <li>Loja boutique com boa infraestrutura física</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Portobello</h3>
+      <div class="listas">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Atende muito bem com boa infraestrutura para o cliente</li>
+            <li>Suporte técnico bom, fazem paginação também</li>
+            <li>Valor agregado mais alto</li>
+          </ul>
+        </div>
+        <div class="lista-bloco atencao">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Preço tabelado a nível nacional — sem flexibilidade quando o cliente compra em outra loja da rede</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Casa Dexco</h3>
+      <div class="listas uma-coluna">
+        <div class="lista-bloco neutro">
+          <h4>Observações</h4>
+          <ul>
+            <li>Showroom para visualizar produtos Deca e Portinari para compras diretas</li>
+            <li>Unidade em Novo Hamburgo — visita pendente para entender a sistemática</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ILUMINAÇÃO -->
+  <div class="secao">
+    <div class="secao-titulo">Iluminação</div>
+
+    <div class="fornecedor">
+      <h3>Vértice <span class="local">Porto Alegre</span></h3>
+      <div class="listas">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Faz ajustes em luminotécnico</li>
+            <li>Bom atendimento</li>
+            <li>Possui fabricação de perfis</li>
+            <li>Produtos técnicos com boa variedade</li>
+            <li>Paga reserva corretamente</li>
+            <li>Atende bem obras em POA e região</li>
+          </ul>
+        </div>
+        <div class="lista-bloco atencao">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Retorno de orçamentos moroso — necessário cobrar a vendedora</li>
+            <li>Pouco showroom de peças decorativas</li>
+            <li>Morosidade no envio de produtos a longa distância</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fornecedor">
+      <h3>Lucenci <span class="local">Gramado / RS</span></h3>
+      <div class="listas">
+        <div class="lista-bloco positivo">
+          <h4>Pontos Positivos</h4>
+          <ul>
+            <li>Faz ajustes em luminotécnico</li>
+            <li>Resolve pendências em obra com mais agilidade que a Vértice</li>
+            <li>Retorno rápido, atende bem o cliente</li>
+            <li>Trabalha com inúmeras marcas</li>
+          </ul>
+        </div>
+        <div class="lista-bloco atencao">
+          <h4>Pontos de Atenção</h4>
+          <ul>
+            <li>Histórico de atraso no pagamento de reservas (período da Dai)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Mayresse Arquitetura — Documento de uso interno
+  </footer>
+
+</div>
+</body>
+</html>
