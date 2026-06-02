@@ -10,9 +10,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Workspace de automação de marketing da Mayresse Arquitetura. Usado para criar e escalar conteúdo para as 3 marcas do grupo: carrosséis, sites, apresentações, vídeos curtos e propostas comerciais.
 
 **Estrutura de pastas:**
-- `conteudo/` — produção de conteúdo organizada por marca
-  - `mayresse-arquitetura/` — carrosséis, reels, youtube
-  - `mayresse-lima/` — carrosséis, reels
+- `conteudo/` — produção de conteúdo
+  - `carrosseis/` — todos os carrosséis organizados por mês → `carrosseis/junho-2026/mayresse-lima/[tema]/`
+  - `mayresse-arquitetura/` — reels, youtube e outros formatos
+  - `mayresse-lima/` — reels e outros formatos
   - `inside-mayresse/` — conteúdo da imersão
 - `sites/` — landing pages e sites gerados
 - `propostas/` — propostas comerciais
